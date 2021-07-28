@@ -12,7 +12,7 @@ suggested were complex, and it was difficult for me to diagnose any
 problems I encountered.
 
 Another source of confusion is that the Nix derivations recommended by
-different tutorials were usually completely different
+different tutorials were usually completely different.
 One reason for this is that Nix has added better tools for Haskell
 development (e.g. `pkgs.haskellPackages.developPackage`), and Cabal has
 made changes that make it more Nix-like.
@@ -27,8 +27,8 @@ type of projects I work on -- make Stack or other build tools
 unnecessary.
 The more technologies are involved in the process, the more complicated
 it is to diagnose any problems that occur.
-*Even if I eventually decide to introduce some of these tools,
-I wanted to get more comfortable with Nix first.*
+*Even if I eventually decide to introduce some of these tools to my
+workflow, I wanted to get more comfortable with Nix first.*
 
 ## The basic workflow
 

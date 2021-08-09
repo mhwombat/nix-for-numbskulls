@@ -63,7 +63,7 @@ or else you have to set the "name" field in `default.nix`.
 If you need a package that isn't in Hackage, or you want to use a
 different version, add it to `default.nix`.
 In the example below, I've added the path to another package named
-`grid`.
+`additional-package`.
 
 ```
 let
@@ -72,7 +72,7 @@ in
   pkgs.haskellPackages.developPackage {
     root = ./.;
     source-overrides = {
-      grid = ../grid;
+      additional-package = ../additional-package;
     };
   }
 ```

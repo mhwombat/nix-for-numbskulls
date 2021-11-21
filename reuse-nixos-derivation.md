@@ -86,5 +86,7 @@ each package in NixOS.
 Take a look at
 https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix.
 
+## Acknowledgements
+
 *Thank you to jtojnar on the Nix Discourse forum for this elegant
 solution!*

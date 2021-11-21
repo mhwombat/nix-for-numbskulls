@@ -76,5 +76,15 @@ Here's what to put in it:
 
 Now the `nix-shell` command should work as expected.
 
+## Want to know more?
+
+The code above is a simplified version of how
+
+`pkgs/top-level/all-packages.nix` invokes the `default.nix`es for
+each package in NixOS.
+
+Take a look at
+https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix.
+
 *Thank you to jtojnar on the Nix Discourse forum for this elegant
 solution!*

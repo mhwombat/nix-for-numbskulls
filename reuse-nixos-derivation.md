@@ -7,8 +7,7 @@ You want to do some development work on a project that uses a build
 system other than Nix.
 If you only use that build system for this one project,
 you may not want to install all of the tools it requires in NixOS.
-It would be nice to set up a nix shell that has the extra tools you
-need for this project.
+Instead, it would be nice to set up a nix shell that has those tools.
 
 If you're not familiar with the build system, writing a Nix derivation
 may seem a daunting task.

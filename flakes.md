@@ -32,12 +32,14 @@ nix flake init -t templates#simpleContainer
 
 The basic structure of a flake is
 
+```
 {
   description = ... # package description
   inputs = ... # dependencies
   outputs = ... # what the flake produces
   nixConfig = ... # advanced configuration options
 }
+```
 
 The `description` part is self-explanatory.
 You probably won't need `nixConfig` unless you're doing something fancy.

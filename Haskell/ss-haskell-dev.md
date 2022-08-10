@@ -36,7 +36,7 @@ workflow, I wanted to get more comfortable with Nix first.*
 file.
 If you already have a cabal file, you can skip this step.
 
-    nix-shell --packages ghc --run 'cabal init'
+    nix-shell --packages ghc --packages cabal-install --run 'cabal init'
 
 2. Create default.nix:
 

@@ -61,7 +61,7 @@ If not, see the next section.
    - Run `nix-shell` to enter an environment with all of your
      dependencies available, and then use the usual cabal commands.
 
-## Making additional tools available in your development environment.
+## Making additional tools available in your development environment
 
 In the previous section, we assumed you have installed `cabal-install` globally.
 However, we can add it (or any other tools you want) to `default.nix` like so.

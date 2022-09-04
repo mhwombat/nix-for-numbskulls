@@ -38,7 +38,7 @@ If you already have a cabal file, you can skip this step.
 
     nix-shell --packages ghc --packages cabal-install --run 'cabal init'
 
-2. Create default.nix:
+2. Create `default.nix`:
 
 ```
 let
@@ -52,11 +52,37 @@ in
 *Important:* Your directory must have the same name as your package,
 or else you have to set the "name" field in `default.nix`.
 
+*Important:* The above version of `default.nix` assumes you have installed `cabal-install` globally.
+If not, see the next section.
+
 3. Build your package in one of two ways:
 
    - Run `nix-build`.
    - Run `nix-shell` to enter an environment with all of your
      dependencies available, and then use the usual cabal commands.
+
+## Making additional tools available in your development environment.
+
+In the previous section, we assumed you have installed `cabal-install` globally.
+However, we can add it (or any other tools you want) to `default.nix` like so.
+
+```
+let
+  pkgs = import <nixpkgs> { };
+in
+  pkgs.haskellPackages.developPackage {
+    root = ./.;
+        modifier = drv:
+          pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
+            [
+              cabal-install
+              # list additional tools here
+            ]);
+  }
+```
+
+If you need additional tools in your build environment,
+add them in
 
 ## Adding or overriding dependencies
 

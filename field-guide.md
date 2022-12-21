@@ -28,6 +28,8 @@ at the time it's being realised (built).
 
 The set of commands available is documented in the [nixpkgs manual](https://nixos.org/manual/nixpkgs/stable/#sec-tools-of-stdenv).
 
+The function is defined [here](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/stdenv/generic/make-derivation.nix).
+
 ### `std.callPackage`
 
 A convenience function that imports and calls a function, filling in any

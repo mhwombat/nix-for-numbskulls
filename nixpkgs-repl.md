@@ -53,6 +53,7 @@ error: undefined variable 'fetchurl'
 We still have a problem.
 The reason that `fetchurl` is undefined is that we haven't provided access to the nixpkgs environment.
 Let's remedy that and try again.
+[TODO: Explain how to use `callPackage`, `libsForQt5.callPackage`, etc. instead of passing args manually]
 
 ```
 nix-repl> :l <nixpkgs>

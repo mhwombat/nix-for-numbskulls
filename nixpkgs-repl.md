@@ -8,9 +8,9 @@ I'll also demonstrate some common mistakes you might make in the process, and ho
 
 ## A simple derivation
 
-We'll begin with what is probably the simplest package in the repo, "hello".
+We'll begin with what is probably the simplest package in the nixpkgs repo, "hello".
 To follow along, download the file
-[default.nix](https://raw.githubusercontent.com/NixOS/nixpkgs/nixos-unstable/pkgs/applications/misc/hello/default.nix)
+[default.nix](https://raw.githubusercontent.com/NixOS/nixpkgs/f3d9f4623d2f370cbf98433981b1e4593a4e7a3c/pkgs/applications/misc/hello/default.nix)
 for the "hello" package.
 
 Let's start the REPL, import the derivation for "hello", and inspect it.
@@ -133,7 +133,7 @@ Typing out all those parameter names is annoying.
 Fortunately, there is an easier way.
 
 Let's look at how nixpkgs handles things.
-If you examine the nixpkgs repo, you'll find a file called `all-packages.nix`.
+If you examine the nixpkgs repo, you'll find a file called [`all-packages.nix`](https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix).
 This file specifies how to import the derivation for each package in nixpkgs.
 For the "hello" package, it has the following.
 

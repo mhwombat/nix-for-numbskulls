@@ -39,6 +39,7 @@ namely the other packages that it uses to build or test the program.
 Normally these would be supplied by nix when you invoke `nix-env -i hello`,
 or by NixOS when if you include `hello` in your configuration.
 Since we're trying to create the derivation in the REPL, we need to pass those parameters manually.
+(In the next section, we'll see an easier way to do this that doesn't require typing in all the parameters.)
 
 ```
 nix-repl>  d = import ./default.nix { callPackage=callPackage; lib=lib; stdenv=stdenv; fetchurl=fetchurl; nixos=nixos; testers=testers; hello=hello; }
@@ -53,7 +54,6 @@ error: undefined variable 'fetchurl'
 We still have a problem.
 The reason that `fetchurl` is undefined is that we haven't provided access to the nixpkgs environment.
 Let's remedy that and try again.
-[TODO: Explain how to use `callPackage`, `libsForQt5.callPackage`, etc. instead of passing args manually]
 
 ```
 nix-repl> :l <nixpkgs>
@@ -120,6 +120,42 @@ We can find out where a package has been, or will be, installed.
 nix-repl> d.outPath
 "/nix/store/zgzkg0rlb5ylyj998siidspxq4mb068c-hello-2.12"
 ```
+
+## Using `callPackage`
+
+In the previous section, we learned that we have to supply parameters to `default.nix` to get the derivation.
+
+```
+nix-repl>  d = import ./default.nix { callPackage=callPackage; lib=lib; stdenv=stdenv; fetchurl=fetchurl; nixos=nixos; testers=testers; hello=hello; }
+```
+
+Typing out all those parameter names is annoying.
+Fortunately, there is an easier way.
+
+Let's look at how nixpkgs handles things.
+If you examine the nixpkgs repo, you'll find a file called `all-packages.nix`.
+This file specifies how to import the derivation for each package in nixpkgs.
+For the "hello" package, it has the following.
+
+```
+  hello = callPackage ../applications/misc/hello { };
+```
+
+The function `callPackage` will handle the import for us, supplying all of the parameters automatically.
+
+```
+nix-repl> d = callPackage ./default.nix {}
+
+nix-repl> d
+«derivation /nix/store/7vf0d0j7majv1ch1xymdylyql80cn5fp-hello-2.12.1.drv»
+```
+
+Don't forget to load `<nixpkgs>` first.
+Also, don't forget the `{}` at the end of the line invoking `callPackage`.
+
+Note that some packages do not use the standard `callPackage` function, so you'll need to check `all-packages.nix` to verify.
+Some of the more common alternatives you'll see are
+`python3Packages.callPackage` and `libsForQt5.callPackage`
 
 ## A more sophisticated derivation
 

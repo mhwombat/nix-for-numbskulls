@@ -1,8 +1,14 @@
 # The Nix Function Zoo
 
 It's not always easy to find information on some of the commonly-used Nix functions,
-particularly the Haskell-related ones,
-so I've included some links below.
+particularly the Haskell-related ones.
+This page is is intended to help you find your way.
+I've focused on the functions that you're most likely to see in a typical `default.nix`, `shell.nix`, or `flake.nix` file.
+
+*Tip:* Click the
+<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-list-unordered" aria-label="The unordered list icon" role="img"><path d="M5.75 2.5h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 010-1.5zm0 5h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 010-1.5zm0 5h8.5a.75.75 0 010 1.5h-8.5a.75.75 0 010-1.5zM2 14a1 1 0 110-2 1 1 0 010 2zm1-6a1 1 0 11-2 0 1 1 0 012 0zM2 4a1 1 0 110-2 1 1 0 010 2z"></path></svg>
+icon in the file header to see the table of contents and go directly to the function you're interested in.
+
 Thanks go to cdpillabout for much of this information.
 There's a lot more good information in this [Discourse thread](https://discourse.nixos.org/t/why-are-these-derivations-so-different/18257/3),
 I've only summarised part of it below.
@@ -30,7 +36,7 @@ The set of commands available is documented in the [nixpkgs manual](https://nixo
 
 The function is defined [here](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/stdenv/generic/make-derivation.nix).
 
-### `std.callPackage`
+### `stdenv.callPackage`
 
 A convenience function that imports and calls a function, filling in any
 missing arguments by passing the corresponding attribute from the Nixpkgs set.
@@ -41,6 +47,21 @@ provides documentation.
 
 There's also a [Nix pill](https://nixos.org/guides/nix-pills/callpackage-design-pattern.html)
 that shows how to write and use your own version of this function.
+
+### `builtins.fetchGit`
+
+Fetch path from a git repo.
+Documented in the [nix manual](https://nixos.org/manual/nix/stable/language/builtins.html#builtins-fetchGit).
+
+### `builtins.fetchTarball`
+
+Download a tar archive, unpack it, and return the path of the unpacked tree.
+Documented in the [nix manual](https://nixos.org/manual/nix/stable/language/builtins.html#builtins-fetchTarball).
+
+### `builtins.getFlake`
+
+Fetch a flake, and return its output attributes and metatdata.
+Documented in the [nix manual](https://nixos.org/manual/nix/stable/language/builtins.html#builtins-getFlake).
 
 ### other
 

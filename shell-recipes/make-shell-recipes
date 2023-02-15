@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+function buildMakefile {
+  cat header.md
+
+  for file in `ls 0*.nix | sort`
+  do
+    echo "<!-- $file -->"
+    sed 's/^/    /; s/^    # \?//;' $file
+    echo ""
+  done
+}
+
+buildMakefile > shell-recipes.md
+

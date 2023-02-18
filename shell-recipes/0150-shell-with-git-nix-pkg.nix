@@ -12,6 +12,6 @@ mkShell {
 }
 # Here's a demonstration using the shell.
 #
-#    $ nix-shell
-#    $ hello-nix
-#    Hello from your nix package!
+#     $ nix-shell
+#     $ hello-nix
+#     Hello from your nix package!

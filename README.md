@@ -1,6 +1,7 @@
-# nix-for-numbskulls
+# Nix Tutorials and Helpful Information
 
-Tutorials and helpful information.
+I write short tutorials on aspects of Nix that I feel aren't well-explained elsewhere
+(at least at the time of writing).
 
 - [Nix shell recipes](shell-recipes/shell-recipes.md)
 - [Investigating Nix packages in the REPL](nixpkgs-repl.md)

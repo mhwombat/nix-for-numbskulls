@@ -47,11 +47,49 @@ The command-line equivalent would be `nix-shell -p hello cowsay`
     }
 Here's a demonstration using the shell.
 
-   $ nix-shell
-   $ hello-nix
-   Hello from your nix package!
+    $ nix-shell
+    $ hello-nix
+    Hello from your nix package!
 
-<!-- 0200-shell-haskell-local.nix -->
+<!-- 0200-shell-with-flake.nix -->
+## Shell with access to a flake
+
+    with (import <nixpkgs> {});
+    let
+       hello = (builtins.getFlake git+https://codeberg.org/mhwombat/hello-flake).packages.${builtins.currentSystem}.default;
+       # For older flakes, you might need an expression like this...
+       # hello = (builtins.getFlake git+https://codeberg.org/mhwombat/hello-flake).defaultPackage.${builtins.currentSystem};
+    in
+    mkShell {
+      buildInputs = [
+        hello
+      ];
+    }
+Here's a demonstration using the shell.
+
+    $ nix-shell
+    $ hello-flake
+    Hello from your flake!
+
+<!-- 0250-shell-with-flake-rev.nix -->
+## Shell with access to a specific revision of a flake
+
+    with (import <nixpkgs> {});
+    let
+       hello = (builtins.getFlake git+https://codeberg.org/mhwombat/hello-flake?ref=main&rev=3aa43dbe7be878dde7b2bdcbe992fe1705da3150).packages.${builtins.currentSystem}.default;
+    in
+    mkShell {
+      buildInputs = [
+        hello
+      ];
+    }
+Here's a demonstration using the shell.
+
+    $ nix-shell
+    $ hello-flake
+    Hello from your flake!
+
+<!-- 0300-shell-haskell-local.nix -->
 ## Shell with access to a Haskell package on your local computer
 
 This shell provides access to three Haskell packages that are on my hard drive.
@@ -71,7 +109,7 @@ This shell provides access to three Haskell packages that are on my hard drive.
                     ];
     }
 
-<!-- 0300-shell-haskell-local-deps.nix -->
+<!-- 0350-shell-haskell-local-deps.nix -->
 ## Shell with access to a Haskell package on your local computer, with interdependencies
 
 This shell provides access to four Haskell packages that are on my hard drive.

@@ -4,7 +4,7 @@ The repositories listed below contains a simple program packaged using a Nix fla
 Each one is intended to be a minimalist, self-contained example demonstrating one aspect of flakes.
 
 - The [hello-flake](https://codeberg.org/mhwombat/hello-flake) repo
-  contains a single executable bash script that prints a greeting.
+  shows how to package a Bash script.
 
 - The [hello-flake-compat](https://codeberg.org/mhwombat/hello-flake-compat) repo
   is identical to `hello-flake`, except that it can be used in legacy (non-flake) projects.
@@ -12,4 +12,4 @@ Each one is intended to be a minimalist, self-contained example demonstrating on
   and to build the project using either the old nix-build or the new nix build commands.
 
 - The [hello-flake-haskell](https://codeberg.org/mhwombat/hello-flake-haskell) repo
-  contains a single executable Haskell program that prints a greeting.
+  shows how to package a Haskell program.

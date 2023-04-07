@@ -1,7 +1,6 @@
 # Nix flake recipes
 
-The repositories listed below contains a simple program packaged using a Nix flake.
-Each one is intended to be a minimalist, self-contained example demonstrating one aspect of flakes.
+Each repository listed below is intended to be a minimal, self-contained example demonstrating one aspect of flakes.
 
 - The [hello-flake](https://codeberg.org/mhwombat/hello-flake) repo
   shows how to package a Bash script.

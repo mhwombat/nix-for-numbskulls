@@ -16,17 +16,20 @@ some of which (at the time I write this) aren't as well-known.
 
 You don't have to write flakes from scratch, there are several
 templates you can use.
-To see the available templates:
+To see the templates available from nixpkgs:
 
 ```
 nix flake show templates
 ```
 
-To create a flake from a specific template:
+To create a flake from one of those templates, e.g., `simpleContainer`:
 
 ```
 nix flake init -t templates#simpleContainer
 ```
+
+However, other templates are available that may be better suited for beginners.
+One source is [Zero to Nix](https://zero-to-nix.com/start/nix-build#flake).
 
 # Flake structure
 

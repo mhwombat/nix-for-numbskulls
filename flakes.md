@@ -44,7 +44,7 @@ The basic structure of a flake is
 }
 ```
 
-The `description` part is self-explanatory.
+The `description` part is self-explanatory; it's just a string.
 You probably won't need `nixConfig` unless you're doing something fancy.
 I'm going to focus on what goes into the `inputs` and `outputs` sections,
 and highlight some of the things I found confusing.
@@ -52,6 +52,7 @@ and highlight some of the things I found confusing.
 # Inputs
 
 This section specifies the dependencies of a flake.
+It's an *attribute set*; it maps keys to values.
 
 To ensure that a build is reproducible, the build step runs in a *pure* environment,
 with no access to anything except files that are part of its repo.

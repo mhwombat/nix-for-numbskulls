@@ -4,48 +4,48 @@ Also see the [Quickstart Guide to Flakes](https://github.com/mhwombat/nix-for-nu
 
 ## A generic flake template
 
-    {
-      description = "BRIEF PACKAGE DESCRIPTION";
-
-      inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs";
-        flake-utils.url = "github:numtide/flake-utils";
-        FLAKE REFERENCES FOR OTHER DEPENDENCIES
-      };
-
-      outputs = { self, nixpkgs, flake-utils, OTHER DEPENDENCIES }:
-        flake-utils.lib.eachDefaultSystem (system:
-          let
-            pkgs = import nixpkgs { inherit system; };
-            python = pkgs.python3;
-          in
-          {
-            devShells = rec {
-              default = DEFINITION FOR DEVELOPMENT SHELL;
-            };
-
-            packages = rec {
-              myPackageName = PACKAGE DEFINITION;
-              default = myPackageName;
-            };
-
-            apps = rec {
-              myPackageName = flake-utils.lib.mkApp { drv = self.packages.${system}.myPackageName; };
-              default = myPackageName;
-            };
-          }
-        );
-    }
+<pre>{
+  description = &quot;<var>BRIEF PACKAGE DESCRIPTION</var>&quot;;
+&nbsp;
+  inputs = {
+    nixpkgs.url = &quot;github:NixOS/nixpkgs&quot;;
+    flake-utils.url = &quot;github:numtide/flake-utils&quot;;
+    <var>...FLAKE REFERENCES FOR OTHER DEPENDENCIES...</var>
+  };
+&nbsp;
+  outputs = { self, nixpkgs, flake-utils, <var>...OTHER DEPENDENCIES...</var> }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        python = pkgs.python3;
+      in
+      {
+        devShells = rec {
+          default = <var>DEFINITION FOR DEVELOPMENT SHELL</var>;
+        };
+&nbsp;
+        packages = rec {
+          <var>myPackageName</var> = <var>PACKAGE DEFINITION</var>;
+          default = <var>myPackageName</var>;
+        };
+&nbsp;
+        apps = rec {
+          <var>myPackageName</var> = flake-utils.lib.mkApp { drv = self.packages.${system}.<var>myPackageName</var>; };
+          default = <var>myPackageName</var>;
+        };
+      }
+    );
+}</pre>
 
 ### A typical development shell
 
-            devShells = rec {
-              default = pkgs.mkShell {
-                packages = [
-                  LIST OF PACKAGES YOU WANT ACCESS TO FOR DEVELOPMENT
-                ];
-              };
-            };
+<pre>        devShells = rec {
+          default = pkgs.mkShell {
+            packages = [
+              <var>LIST OF PACKAGES YOU WANT ACCESS TO FOR DEVELOPMENT</var>
+            ];
+          };
+        };</pre>
 
 ### The package definition
 

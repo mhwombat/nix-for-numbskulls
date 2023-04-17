@@ -29,7 +29,9 @@ nix flake init -t templates#simpleContainer
 ```
 
 However, other templates are available that may be better suited for beginners.
-One source is [Zero to Nix](https://zero-to-nix.com/start/nix-build#flake).
+You may find this [generic flake template](flake-recipes.md#a-generic-flake-template) helpful as a starting point
+for writing your first flake.
+Another source of templates is [Zero to Nix](https://zero-to-nix.com/start/nix-build#flake).
 
 # Flake structure
 

@@ -4,6 +4,10 @@ Also see the [Quickstart Guide to Flakes](https://github.com/mhwombat/nix-for-nu
 
 ## A generic flake template
 
+Note: This is a "template" in the sense that it is a useful pattern to follow.
+It's not something you can use with `nix flake init`.
+I may create a set of that sort of template in the future; watch this space.
+
 <pre>{
   description = &quot;<var>BRIEF PACKAGE DESCRIPTION</var>&quot;;
 &nbsp;

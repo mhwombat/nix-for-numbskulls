@@ -144,9 +144,14 @@ That depends on the programming languages your software is written in,
 the build system you use, and more.
 There are Nix functions and tools that can simplify much of this,
 and new, easier-to-use ones are released regularly.
+
+# Writing your own flakes
+
 I recommend that you start by consulting some of the resources below,
 and find a simple example of a flake written for your programming language and chosen build system.
 I've started a small [collection of examples](flake-recipes.md) that may be helpful.
+You may find this [generic flake template](flake-recipes.md#a-generic-flake-template) helpful as a starting point
+for writing your first flake.
 
 # Other resources
 

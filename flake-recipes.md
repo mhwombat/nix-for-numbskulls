@@ -2,7 +2,8 @@
 
 Also see the [Quickstart Guide to Flakes](https://github.com/mhwombat/nix-for-numbskulls/blob/main/flakes.md).
 
-You may find this [colour-coded generic flake template with instructions](flake-recipes/generic.pdf) (PDF) helpful.
+You may find this [colour-coded generic flake template with instructions](https://raw.githubusercontent.com/mhwombat/nix-for-numbskulls/main/flake-recipes/generic.pdf) helpful.
+If GitHub doesn't render the PDF properly, you may can download it.
 
 Each repository listed below is intended to be a minimal, self-contained example demonstrating one aspect of flakes.
 

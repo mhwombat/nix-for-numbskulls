@@ -19,4 +19,4 @@ Each repository listed below is intended to be a minimal, self-contained example
   shows how to package a Haskell program.
 
 - The [hello-flake-python](https://codeberg.org/mhwombat/hello-flake-python) repo
-  shows how to package a Haskell program.
+  shows how to package a Python program.

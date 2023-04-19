@@ -2,69 +2,7 @@
 
 Also see the [Quickstart Guide to Flakes](https://github.com/mhwombat/nix-for-numbskulls/blob/main/flakes.md).
 
-## A generic flake template
-
-Note: This is a "template" in the sense that it is a useful pattern to follow.
-It's not something you can use with `nix flake init`.
-I may create a set of that sort of template in the future; watch this space.
-
-<pre>{
-  description = &quot;<var>BRIEF PACKAGE DESCRIPTION</var>&quot;;
-&nbsp;
-  inputs = {
-    nixpkgs.url = &quot;github:NixOS/nixpkgs&quot;;
-    flake-utils.url = &quot;github:numtide/flake-utils&quot;;
-    <var>...FLAKE REFERENCES FOR OTHER DEPENDENCIES...</var>
-  };
-&nbsp;
-  outputs = { self, nixpkgs, flake-utils, <var>...OTHER DEPENDENCIES...</var> }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-        python = pkgs.python3;
-      in
-      {
-        devShells = rec {
-          default = <var>DEFINITION FOR DEVELOPMENT SHELL</var>;
-        };
-&nbsp;
-        packages = rec {
-          <var>myPackageName</var> = <var>PACKAGE DEFINITION</var>;
-          default = <var>myPackageName</var>;
-        };
-&nbsp;
-        apps = rec {
-          <var>myPackageName</var> = flake-utils.lib.mkApp { drv = self.packages.${system}.<var>myPackageName</var>; };
-          default = <var>myPackageName</var>;
-        };
-      }
-    );
-}</pre>
-
-### A typical development shell
-
-<pre>        devShells = rec {
-          default = pkgs.mkShell {
-            packages = [
-              <var>LIST OF PACKAGES YOU WANT ACCESS TO FOR DEVELOPMENT</var>
-            ];
-          };
-        };</pre>
-
-### The package definition
-
-This part depends on the programming language and build tools you use.
-Here are a few functions that are commonly used:
-
-General-purpose: [`mkDerivation`](https://nixos.org/manual/nixpkgs/stable/#chap-stdenv)
-Handles the standard `./configure; make; make install` scenario, customisable.
-
-Python: `buildPythonApplication`, `buildPythonPackage`.
-
-Haskell: `mkDerivation` (Haskell version, which is a wrapper around the standard environment version),
-`developPackage`, `callCabal2Nix`.
-
-## Examples
+You may find this colour-coded [generic flake template](flake-recipes/generic.html) with instructions helpful.
 
 Each repository listed below is intended to be a minimal, self-contained example demonstrating one aspect of flakes.
 

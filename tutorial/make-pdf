@@ -1,0 +1,17 @@
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p pandoc texlive.combined.scheme-small
+
+rm -rf ~/tutorial-practice
+mkdir ~/tutorial-practice
+
+rm -f temp.md
+
+for file in `ls ??-*.md | sort`
+do
+  echo Processing $file
+  ./run-code < $file >> temp.md
+done
+
+echo "Generating PDF"
+pandoc temp.md -o tutorial.pdf
+#rm temp.md

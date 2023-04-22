@@ -1,3 +1,14 @@
+---
+title:  'A Beginner-friendly Flake Tutorial'
+author: Amy de Buitléir
+mainfont: DejaVu Sans
+fontsize: 10
+margin-top: 2cm
+margin-bottom: 2cm
+margin-left: 2cm
+margin-right: 2cm
+...
+
 # Using a flake
 
 Before learning to write Nix flakes,

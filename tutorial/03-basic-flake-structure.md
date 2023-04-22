@@ -1,6 +1,6 @@
 # Flake structure
 
-The basic structure of a flake is
+The basic structure of a flake is shown below.
 
 ~~~
 {
@@ -63,17 +63,18 @@ all flake inputs.
 
 Git and Mercurial repositories are the most common type of flake reference, as in the examples below.
 
-`git+https://github.com/NixOS/patchelf`
-  : A Git repository.
+A Git repository
+ : `git+https://github.com/NixOS/patchelf`
+  :
 
-`git+https://github.com/NixOS/patchelf?ref=master`
-  : A specific branch of a Git repository.
+A specific branch of a Git repository
+  : `git+https://github.com/NixOS/patchelf?ref=master`
 
-`git+https://github.com/NixOS/patchelf?ref=master&rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e`
-  : A specific branch and revision of a Git repository.
+A specific branch and revision of a Git repository
+  : `git+https://github.com/NixOS/patchelf?ref=master&rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e`
 
-`https://github.com/NixOS/patchelf/archive/master.tar.gz`
-  : A tarball flake.
+A tarball
+  : `https://github.com/NixOS/patchelf/archive/master.tar.gz`
 
 You can find more examples of flake references in the [Nix Reference Manual](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples).
 
@@ -118,3 +119,4 @@ That depends on the programming languages your software is written in,
 the build system you use, and more.
 There are Nix functions and tools that can simplify much of this,
 and new, easier-to-use ones are released regularly.
+We'll look at some of these in the next section.

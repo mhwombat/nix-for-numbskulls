@@ -1,4 +1,4 @@
-# A brief examiniation of the flake
+# A brief examination of the flake
 
 Let's clone the repo and see how the flake is defined.
 

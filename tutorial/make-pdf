@@ -13,5 +13,5 @@ do
 done
 
 echo "Generating PDF"
-pandoc temp.md -o tutorial.pdf
+pandoc temp.md --pdf-engine=xelatex -o tutorial.pdf
 #rm temp.md

@@ -1,6 +1,6 @@
-# A brief examination of the flake
+# The hello-flake repo
 
-Let's clone the repo and see how the flake is defined.
+Let's clone the repository and see how the flake is defined.
 
 ~~~
 $ cd ~/tutorial-practice

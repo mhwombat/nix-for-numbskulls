@@ -21,8 +21,7 @@ and highlight some of the things I found confusing.
 This section specifies the dependencies of a flake.
 It's an *attribute set*; it maps keys to values.
 
-To ensure that a build is reproducible, the build step runs in a *pure* environment,
-with no access to anything except files that are part of its repo.
+To ensure that a build is reproducible, the build step runs in a *pure* environment with no network access.
 Therefore, any external dependencies must be specified in the "inputs" section
 so they can be fetched in advance (before we enter the pure environment).
 

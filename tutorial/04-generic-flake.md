@@ -33,10 +33,13 @@ The package definition ❺ depends on the programming languages your software is
 There are Nix functions and tools that can simplify much of this, and new, easier-to-use ones are released regularly.
 Again, I recommend that you do a web search for "nix language", and try to find resources that were written or updated recently.
 
+The `apps` variable identifies any applications provided by the flake.
+In particular, it identifies the default executable ❻ that `nix run` will run if you don't specify an app.
+
 The list below contains are a few functions that are commonly used in this section.
 
 General-purpose
-  : The standard environment provides `mkDerivation`, which is especially useful for the typical ./configure; make; make install scenario.
+  : The standard environment provides `mkDerivation`, which is especially useful for the typical `./configure; make; make install` scenario.
     It's customisable.
 
 Python

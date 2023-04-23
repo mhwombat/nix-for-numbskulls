@@ -10,6 +10,7 @@ for file in `ls ??-*.md | sort`
 do
   echo Processing $file
   ./run-code < $file >> temp.md
+  echo "" >> temp.md   # ensure a blank line between each section
 done
 
 echo "Generating PDF"

@@ -24,13 +24,11 @@ I may create a set of templates like that in the future; watch this repo.</em>
     flake-utils.lib.eachDefaultSystem (system:<span style="font-size:18px">&nbsp;&#x2778;</span>
       let
         pkgs = import nixpkgs { inherit system; };
-        python = pkgs.python3;
       in
       {
         devShells = rec {
           default = pkgs.mkShell {
-            packages = [ <var style="background-color:PowderBlue">PACKAGES NEEDED FOR DEVELOPMENT SHELL</var>;<span style="font-size:18px">&nbsp;&#x2779;</span> ]))
-            ];
+            packages = [ <var style="background-color:PowderBlue">PACKAGES NEEDED FOR DEVELOPMENT SHELL</var><span style="font-size:18px">&nbsp;&#x2779;</span> ];
           };
 &nbsp;
         packages = rec {
@@ -40,7 +38,7 @@ I may create a set of templates like that in the future; watch this repo.</em>
 &nbsp;
         apps = rec {
           <var style="background-color:Plum">myPackageName</var> = flake-utils.lib.mkApp { drv = self.packages.${system}.<var style="background-color:Plum">myPackageName</var>; };
-          default = <var style="background-color:Plum">myPackageName</var>;
+          default = <var style="background-color:Plum">myPackageName</var>; <span style="font-size:18px">&nbsp;&#x277B;</span>
         };
       }
     );

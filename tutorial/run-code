@@ -2,14 +2,21 @@
 #! nix-shell -i bash -p busybox
 
 # Create a pipe for processing commands
+rm -f shell-pipe
 mkfifo shell-pipe
 
 # Set up a bash shell to process the commands sent to the pipe
 (tail -f shell-pipe | sh 2>&1 ) &
 
-while IFS='' read p; do
+while IFS='' read -r p; do
 
-  echo "$p"
+  hidden=$(echo $p | sed -n 's/^$#/$/p')
+
+  if [ -n "$hidden" ] ; then
+    p=$hidden
+  else
+    echo "$p"
+  fi
 
   command=$(echo $p | sed -n 's/^$ //p')
 

@@ -47,10 +47,10 @@ and see what it does.
 
 ~~~
         packages = rec {
-          hello = pkgs.stdenv.mkDerivation rec { ❶
+          hello = pkgs.stdenv.mkDerivation rec {           # See (1) in text
             name = "hello-flake";
 
-            src = ./.; ❷
+            src = ./.;                                     # See (2) in text
 
             unpackPhase = "true";
 
@@ -58,21 +58,21 @@ and see what it does.
 
             installPhase =
               ''
-                mkdir -p $out/bin ❸
-                cp $src/hello-flake $out/bin/hello-flake ❹
-                chmod +x $out/bin/hello-flake ❺
+                mkdir -p $out/bin                          # See (3) in text
+                cp $src/hello-flake $out/bin/hello-flake   # See (4) in text
+                chmod +x $out/bin/hello-flake              # See (5) in text
               '';
           };
 ~~~
 
-This flake uses `mkDerivation`, ❶ which is a very useful general-purpose package builder
+This flake uses `mkDerivation` (1) which is a very useful general-purpose package builder
 provided by the Nix standard environment.
 It's especially useful for the typical `./configure; make; make install` scenario,
 but for this flake we don't even need that.
 
 The `name` variable is the name of the flake, as it would appear in a package listing
 if we were to add it to Nixpkgs or another package collection.
-The `src` variable supplies the location of the source files, relative to `flake.nix`.
+The `src` variable (2) supplies the location of the source files, relative to `flake.nix`.
 When a flake is accessed for the first time, the repository contents are fetched in the form of a tarball.
 The `unpackPhase` variable indicates that we do want the tarball to be unpacked.
 
@@ -82,9 +82,9 @@ However, that's not required for a simple shell script.
 So `buildPhase` consists of a single command, `:`, which is a no-op or "do nothing" command.
 
 The `installPhase` variable is a sequence of Linux commands that will do the actual installation.
-In this case, we create a directory ❸ for the installation,
-copy the `hello-flake` script ❹ there,
-and make the script executable ❺.
+In this case, we create a directory (3) for the installation,
+copy the `hello-flake` script (4) there,
+and make the script executable (5).
 The environment variable `$src` refers to the source directory, which we specified earlier ❷.
 
 Earlier we said that the build step runs in a pure environment to ensure that builds are reproducible.
@@ -116,12 +116,11 @@ It includes the commands listed below[^nixpkgs-manual-stdenv].
   see the [Nixpkgs manual](https://nixos.org/manual/nixpkgs/stable/#sec-tools-of-stdenv)
 
 Only a few environment variables are available.
-The most useful ones are listed below.
+The most interesting ones are listed below.
 
 - `$name` is the package name.
 - `$src` refers to the source directory.
 - `$out` is the path to the location in the Nix store where the package will be added.
 - `$system` is the system that the package is being built for.
-- $PWD and $TMP both point to a temporary build directories
-
-In particular, $HOME and $PATH point to nonexistent directories, so the build cannot rely on them.
+- `$PWD` and `$TMP` both point to a temporary build directories
+- `$HOME` and `$PATH` point to nonexistent directories, so the build cannot rely on them.

@@ -1,15 +1,17 @@
 ---
 title:  'A Beginner-friendly Flake Tutorial'
-author: 'Amy de Buitléir'
 subtitle: '\\emph{\\today}'
+author: 'Amy de Buitléir'
 mainfont: DejaVu Sans
+monofont: DejaVu Sans Mono
 fontsize: 10
 margin-top: 2cm
 margin-bottom: 2cm
 margin-left: 2cm
 margin-right: 2cm
 toc: true
-toc-depth: 1
+toc-depth: 2
+number-sections: true
 colorlinks: true
 hyperrefoptions:
 - linktoc=all

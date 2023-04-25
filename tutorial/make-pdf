@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p pandoc texlive.combined.scheme-small
+#! nix-shell -i bash -p pandoc texlive.combined.scheme-full
 
 rm -rf ~/tutorial-practice
 mkdir ~/tutorial-practice
@@ -14,5 +14,5 @@ do
 done
 
 echo "Generating PDF"
-pandoc temp.md --pdf-engine=xelatex -o tutorial.pdf
+pandoc temp.md  --include-in-header header-extras.tex --pdf-engine=xelatex -o tutorial.pdf
 #rm temp.md

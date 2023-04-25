@@ -22,7 +22,7 @@ while IFS='' read -r p; do
 
   if [ -n "$command" ] ; then
     echo $command > shell-pipe
-    sleep 1
+    sleep 7
   fi
 done
 

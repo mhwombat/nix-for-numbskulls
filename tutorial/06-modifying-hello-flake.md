@@ -123,11 +123,10 @@ Alternatively, we could use `nix run`.
 
 ~~~
 $ nix run
-$ git status
 ~~~
 
 Note, however, that `nix run` rebuilt the package in the Nix store and ran *that*.
-It did not alter the copy in the `result` directory.
+It did not alter the copy in the `result` directory, as we'll see next.
 
 ~~~
 $ cat result/bin/hello-flake
@@ -141,7 +140,7 @@ $ cat result/bin/hello-flake
 ~~~
 
 Let's `git commit` the changes and verify that the warning goes away.
-We don't need to `git push` the changes.
+We don't need to `git push` the changes until we're ready to share them.
 
 ~~~
 $ git commit hello-flake flake.nix -m 'added bovine feature'

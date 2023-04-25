@@ -42,8 +42,12 @@ $ cat flake.nix
 
 If this is your first time seeing a flake definition,
 it probably looks intimidating.
+Flakes are written in a functional language called Nix[^nix-language].
+Yes, "Nix" is the name of both the package manager and the language it uses.
 We'll look at this in more detail shortly.
 For now, I'd like to focus on the inputs section.
+
+[^nix-language]: For an introduction to the Nix language, see [Nix language basics](https://nixos.org/guides/nix-language.html).
 
 ~~~
 inputs = {
@@ -57,10 +61,10 @@ The first one, `nixpkgs` refers to the collection of standard software packages 
 The second,  `flake-utils`, is a collection of utilities that simplify writing flakes.
 The important thing to note is that the `hello-flake` package *depends* on `nixpkgs` and `flake-utils`.
 
-Finally, let's look at `flake.lock`.
+Finally, let's look at `flake.lock`, or rather, just part of it.
 
 ~~~
-$ cat flake.lock
+$ head -n 40 flake.lock
 ~~~
 
 If `flake.nix` seemed intimidating, then this file looks like an invocation for Cthulhu.

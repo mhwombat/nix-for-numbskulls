@@ -1,6 +1,7 @@
 # misc
 *.lock
 *~
-tutorial.aux
-tutorial.log
-tutorial.toc
+tutorial/*.aux
+tutorial/*.log
+tutorial/*.toc
+tutorial/temp.md

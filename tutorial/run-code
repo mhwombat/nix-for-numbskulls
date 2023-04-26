@@ -1,12 +1,4 @@
-#! /usr/bin/env nix-shell
-#! nix-shell -i bash -p busybox
-
-# Create a pipe for processing commands
-rm -f shell-pipe
-mkfifo shell-pipe
-
-# Set up a bash shell to process the commands sent to the pipe
-(tail -f shell-pipe | sh 2>&1 ) &
+#! /usr/bin/env bash
 
 while IFS='' read -r p; do
 
@@ -15,17 +7,15 @@ while IFS='' read -r p; do
   if [ -n "$hidden" ] ; then
     p=$hidden
   else
-    echo "$p"
+    safe=$(echo "$p" | sed "s/'/'\\\\''/g; s/^/'/; s/$/'/") # replace ' with '\'', wrap in single quotes
+    # echo "DEBUG    p=$p"
+    # echo "DEBUG safe=$safe"
+    echo "echo $safe"
   fi
 
   command=$(echo $p | sed -n 's/^$ //p')
 
   if [ -n "$command" ] ; then
-    echo $command > shell-pipe
-    sleep 7
+    echo "$command"
   fi
 done
-
-# Close the pipe and delete it
-fuser -TERM -k shell-pipe > /dev/null
-rm shell-pipe

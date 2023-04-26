@@ -63,8 +63,7 @@ all flake inputs.
 Git and Mercurial repositories are the most common type of flake reference, as in the examples below.
 
 A Git repository
- : `git+https://github.com/NixOS/patchelf`
-  :
+  : `git+https://github.com/NixOS/patchelf`
 
 A specific branch of a Git repository
   : `git+https://github.com/NixOS/patchelf?ref=master`

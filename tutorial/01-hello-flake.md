@@ -1,5 +1,5 @@
 ---
-title:  'A Beginner-friendly Flake Tutorial'
+title: 'A Beginner-friendly Flake Tutorial'
 subtitle: '\emph{\today}'
 author: 'Amy de Buitléir'
 mainfont: DejaVu Sans
@@ -43,7 +43,7 @@ Instead, we can enter a shell with the package available to us, using the `nix s
 $ nix shell "git+https://codeberg.org/mhwombat/hello-flake"
 ~~~
 
-In this shell, the command is our `$PATH`, so we can execute the command by name.
+In this shell, the command is on our `$PATH`, so we can execute the command by name.
 
 ~~~
 $ hello-flake
@@ -60,8 +60,9 @@ $ which hello-flake
 Once we exit that shell, the `hello-flake` command is no longer available.
 
 ~~~
-$ exit
-$ hello-flake
+$# echo '$ exit'
+$# echo '$ hello-flake'
+sh: line 3: hello-flake: command not found
 ~~~
 
 Actually, we can still access the command using the store path we found earlier.

@@ -58,7 +58,7 @@ inputs = {
 
 There are just two entries, one for `nixpkgs` and one for `flake-utils`.
 The first one, `nixpkgs` refers to the collection of standard software packages that can be installed with the Nix package manager.
-The second,  `flake-utils`, is a collection of utilities that simplify writing flakes.
+The second, `flake-utils`, is a collection of utilities that simplify writing flakes.
 The important thing to note is that the `hello-flake` package *depends* on `nixpkgs` and `flake-utils`.
 
 Finally, let's look at `flake.lock`, or rather, just part of it.

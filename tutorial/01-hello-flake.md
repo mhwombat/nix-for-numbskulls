@@ -1,27 +1,3 @@
----
-title: 'A Beginner-friendly Flake Tutorial'
-subtitle: '\emph{\today}'
-author: 'Amy de Buitléir'
-mainfont: DejaVu Sans
-monofont: Noto Sans Mono
-fontsize: 10
-margin-top: 2cm
-margin-bottom: 2cm
-margin-left: 2cm
-margin-right: 2cm
-toc: true
-toc-depth: 2
-number-sections: true
-listings: true
-colorlinks: true
-hyperrefoptions:
-- linktoc=all
-- hyperfootnotes=true
-- colorlinks=true
-include-in-header:
-- header-extras.tex
-...
-
 # Hello, flake!
 
 Before learning to write Nix flakes,

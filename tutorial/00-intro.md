@@ -27,7 +27,7 @@ include-in-header:
 To follow along with this tutorial, you will need access to a computer or (virtual machine) with Nix installed
 and *flakes enabled*.
 
-I recommend the installer and quick start guide from [zero-to-nix.com](https://zero-to-nix.com/start/install).
+I recommend the installer from [zero-to-nix.com](https://zero-to-nix.com/start/install).
 This installer automatically enables flakes.
 
 More documentation (and another installer) available at [nixos.org](https://nixos.org/).

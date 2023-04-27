@@ -62,18 +62,21 @@ all flake inputs.
 
 Git and Mercurial repositories are the most common type of flake reference, as in the examples below.
 
+\footnotesize
 A Git repository
-  : `git+https://github.com/NixOS/patchelf`
+: `git+https://github.com/NixOS/patchelf`
 
 A specific branch of a Git repository
-  : `git+https://github.com/NixOS/patchelf?ref=master`
+: `git+https://github.com/NixOS/patchelf?ref=master`
 
-A specific branch and revision of a Git repository
-  : `git+https://github.com/NixOS/patchelf?ref=master&rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e`
+A specific revision of a Git repository
+: \
+  `git+https://github.com/NixOS/patchelf?ref=master&rev=f34751b88bd07d7f44f5cd3200fb4122bf916c7e`
 
 A tarball
-  : `https://github.com/NixOS/patchelf/archive/master.tar.gz`
+: `https://github.com/NixOS/patchelf/archive/master.tar.gz`
 
+\normalsize
 You can find more examples of flake references in the [Nix Reference Manual](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples).
 
 Although you probably won't need to use it, there is another syntax for flake references that you might encounter.

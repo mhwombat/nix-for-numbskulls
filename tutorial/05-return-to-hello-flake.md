@@ -85,7 +85,7 @@ The `installPhase` variable is a sequence of Linux commands that will do the act
 In this case, we create a directory (3) for the installation,
 copy the `hello-flake` script (4) there,
 and make the script executable (5).
-The environment variable `$src` refers to the source directory, which we specified earlier ❷.
+The environment variable `$src` refers to the source directory, which we specified earlier (2).
 
 Earlier we said that the build step runs in a pure environment to ensure that builds are reproducible.
 This means no Internet access; indeed no access to any files outside the build directory.

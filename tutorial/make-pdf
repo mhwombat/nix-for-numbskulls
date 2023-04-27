@@ -9,7 +9,7 @@ rm -f temp.md
 for file in `ls ??-*.md | sort`
 do
   echo Processing $file
-  ./run-code < $file | bash >> temp.md 2>&1
+  run-code-inline < $file >> temp.md 2>&1
   echo "" >> temp.md   # ensure a blank line between each section
 done
 

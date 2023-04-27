@@ -1,6 +1,9 @@
 # Nix Tutorials and Helpful Information
 
-I write short tutorials on aspects of Nix that I feel aren't well-explained elsewhere
+You may want to start with my [Beginner-friendly Flake Tutorial].
+It's a work-in-progress, so check back peridically for new material.
+
+I also write short tutorials on aspects of Nix that I feel aren't well-explained elsewhere
 (at least at the time of writing).
 
 - [Nix shell recipes](shell-recipes/shell-recipes.md)

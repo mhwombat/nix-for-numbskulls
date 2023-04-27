@@ -1,6 +1,6 @@
 # Nix Tutorials and Helpful Information
 
-You may want to start with my [Beginner-friendly Flake Tutorial].
+You may want to start with my [Beginner-friendly Flake Tutorial](https://raw.githubusercontent.com/mhwombat/nix-for-numbskulls/main/tutorial/tutorial.pdf).
 It's a work-in-progress, so check back peridically for new material.
 
 I also write short tutorials on aspects of Nix that I feel aren't well-explained elsewhere

@@ -2,9 +2,9 @@
 
 Also see the [Quickstart Guide to Flakes](https://github.com/mhwombat/nix-for-numbskulls/blob/main/flakes.md).
 
-You may find the "A generic flake" section in my [tutorial](../tutorial/tutorial.pdf)
-helpful for the
-*colour-coded generic flake template with instructions*.
+You may find this colour-coded
+[generic flake template](https://mhwombat.codeberg.page/nix-book/#_a_generic_flake)
+with instructions helpful.
 
 Each repository listed below is intended to be a minimal, self-contained example demonstrating one aspect of flakes.
 

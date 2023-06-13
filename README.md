@@ -1,6 +1,6 @@
 # Nix Tutorials and Helpful Information
 
-You may want to start with my [*book*](https://mhwombat.codeberg.page/nix-book/),
+You may want to start with my [**book**](https://mhwombat.codeberg.page/nix-book/),
 available for _free_.
 It's a work-in-progress, so check back periodically for new material.
 

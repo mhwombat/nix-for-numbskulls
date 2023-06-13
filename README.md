@@ -1,7 +1,7 @@
 # Nix Tutorials and Helpful Information
 
 You may want to start with my [book](https://mhwombat.codeberg.page/nix-book/),
-available for free.
+available for _free_.
 It's a work-in-progress, so check back periodically for new material.
 
 I also write short tutorials on aspects of Nix that I feel aren't well-explained elsewhere
